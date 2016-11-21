@@ -12,6 +12,11 @@ class ChatsController < ApplicationController
         @chat.save
         redirect_to '/chats'
     end
+    def destroy
+        Chat.find(Chat.size-1).destroy
+        
+        redirect_to '/chats'
+    end
 
     private
 
