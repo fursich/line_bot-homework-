@@ -1,0 +1,11 @@
+<h4>line風bot</h4>
+
+<% @chats.reverse_each do |chat| %>
+<p>
+    <%= chat.partner %> <br>
+</p>
+<p>
+    <%= chat.myself %> <br>
+</p>
+
+<% end %>
