@@ -13,8 +13,8 @@ class ChatsController < ApplicationController
         redirect_to '/chats'
     end
     def destroy
-        Chat.find(Chat.size-1).destroy
-        
+        Chat.last.destroy unless Chat.last.id==Chat.first.id
+
         redirect_to '/chats'
     end
 

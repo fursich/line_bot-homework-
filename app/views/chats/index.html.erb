@@ -1,23 +1,32 @@
-<h4>line風bot</h4>
 
-<% @chats.reverse_each do |chat| %>
-<p>
-    <%= chat.partner %> <br>
-</p>
-<p>
-    <%= chat.myself %> <br>
-</p>
+<h1 class = "heading">line風</h1>
 
-<% end %>
 
-<p>
+<div class="wrapper">
+    <% @chats.reverse_each do |chat| %>
+
+    <div class = "question_Box">
+        <div class="question_image"><img src="http://lohas.nicoseiga.jp/thumb/1144377i?"></div>
+        <div class="arrow_answer">
+            <H5><%= chat.partner %></H5>
+        </div>
+    </div>
     
-<%= form_for @new_chat do |f| %>
-    <%= f.text_area :myself %> <br>
-    <%= f.submit "送信" %>
-<% end %>
-</p>
+    <div class = "question_Box">
+        <div class="answer_image"><img src="http://blog-imgs-29.fc2.com/f/b/l/fblogi/1_8.jpg"></div>
+        <div class="arrow_question">
+            <H5><%= chat.myself %></H5>
+        </div>
+    </div>
 
-<p>
-<a href="/chats" data-method="delete">会話を１つ削除する</a>
-</p>
+    <% end %>
+</div>
+
+<div class="new-message">
+    <%= form_for @new_chat do |f| %>
+        <%= f.text_area :myself %> <br>
+        <%= f.submit "送信" %> <br>
+    <% end %>
+
+    <p><a href="/chats" data-method="delete">会話を１つ削除する</a></p>
+</div>
