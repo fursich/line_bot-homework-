@@ -9,3 +9,11 @@
 </p>
 
 <% end %>
+
+<p>
+    
+<%= form_for @new_chat do |f| %>
+    <%= f.text_area :myself %> <br>
+    <%= f.submit "送信" %>
+<% end %>
+</p>
